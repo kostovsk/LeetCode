@@ -5,45 +5,42 @@ namespace Lucky_Numbers_in_a_Matrix_v1._1
 {
    class Program
    {
-      public class Solution
+      public static IList<int> LuckyNumbers(int[][] matrix)
       {
-         public IList<int> LuckyNumbers(int[][] matrix)
+
+         List<int> result = new List<int>();
+
+         for (int i = 0; i < matrix.Length; i++)
          {
+            int minInRow = int.MaxValue;
+            int column = 0;
+            bool isLucky = true;
 
-            List<int> result = new List<int>();
-
-            for (int i = 0; i < matrix.Length; i++)
+            for (int j = 0; j < matrix[i].Length; j++)
             {
-               int minInRow = int.MaxValue;
-               int column = 0;
-               bool isLucky = true;
-
-               for (int j = 0; j < matrix[i].Length; j++)
+               if (matrix[i][j] < minInRow)
                {
-                  if (matrix[i][j] < minInRow)
-                  {
-                     minInRow = matrix[i][j];
-                     column = j;
-                  }
-               }
-
-               for (int k = 0; k < matrix.Length; k++)
-               {
-                  if (matrix[k][column] > minInRow)
-                  {
-                     isLucky = false;
-                     break;
-                  }
-               }
-
-               if (isLucky)
-               {
-                  result.Add(minInRow);
+                  minInRow = matrix[i][j];
+                  column = j;
                }
             }
 
-            return result;
+            for (int k = 0; k < matrix.Length; k++)
+            {
+               if (matrix[k][column] > minInRow)
+               {
+                  isLucky = false;
+                  break;
+               }
+            }
+
+            if (isLucky)
+            {
+               result.Add(minInRow);
+            }
          }
+
+         return result;
       }
 
       static void Main(string[] args)
@@ -56,9 +53,11 @@ namespace Lucky_Numbers_in_a_Matrix_v1._1
                 new int[]{15,16,17}
          };
 
-         Solution findNumber = new Solution();
-         var result = findNumber.LuckyNumbers(matrix);
-         Console.WriteLine(result);
+         var result = LuckyNumbers(matrix);
+         foreach (var item in result)
+         {
+            Console.WriteLine(item);
+         }
 
       }
    }
