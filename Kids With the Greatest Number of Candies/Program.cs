@@ -9,7 +9,6 @@ namespace Kids_With_the_Greatest_Number_of_Candies
       {
          List<bool> result = new List<bool>();
          int a = extraCandies;
-         int maxVal = 5;
 
          //find maxVal from array
          int max = candies[0];
