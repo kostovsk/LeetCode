@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Find N Unique Integers Sum 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kids With the Greatest Number of Candies", "Kids With the Greatest Number of Candies\Kids With the Greatest Number of Candies.csproj", "{B8E7B0CA-5C16-4E92-8A75-AC5647F8D5CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maximum Number of Coins You Can Get", "Maximum Number of Coins You Can Get\Maximum Number of Coins You Can Get.csproj", "{4B98BAEC-9E50-4A20-A774-E81846978DC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maximum Number of Coins You Can Get", "Maximum Number of Coins You Can Get\Maximum Number of Coins You Can Get.csproj", "{4B98BAEC-9E50-4A20-A774-E81846978DC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse Integer", "Reverse Integer\Reverse Integer.csproj", "{C42B253F-822A-47A2-A78E-5A8A46817233}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4B98BAEC-9E50-4A20-A774-E81846978DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B98BAEC-9E50-4A20-A774-E81846978DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B98BAEC-9E50-4A20-A774-E81846978DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C42B253F-822A-47A2-A78E-5A8A46817233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C42B253F-822A-47A2-A78E-5A8A46817233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C42B253F-822A-47A2-A78E-5A8A46817233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C42B253F-822A-47A2-A78E-5A8A46817233}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
