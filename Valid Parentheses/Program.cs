@@ -8,40 +8,74 @@ namespace Valid_Parentheses
       {
          bool result = false;
 
-         for (int i = s.Length - 1; i > 0; i = i - 2)
+         while(s.Length > 0)
          {
-            if (s[i].ToString() == ")")
+            foreach (char c in s)
             {
-               if (s[i-1].ToString() == "(")
+               if (c.Equals('('))
                {
-                  s = s.Remove(i - 1, 2);
-                  result = true;
+                  if (s[s.IndexOf(c) + 1].Equals(')'))
+                  {
+                     s = s.Remove(s.IndexOf(c), 2);
+                     result = true;
+                  }
                }
-            }
-            else if (s[i].ToString() == "}")
-            {
-               if (s[i-1].ToString() == "{")
+               else if (c.Equals('['))
                {
-                  s = s.Remove(i - 1, 2);
-                  result = true;
+                  if (s[s.IndexOf(c) + 1].Equals(']'))
+                  {
+                     s = s.Remove(s.IndexOf(c), 2);
+                     result = true;
+                  }
                }
-            }
-            else if (s[i].ToString() == "]")
-            {
-               if (s[i-1].ToString() == "[")
+               else if (c.Equals('{'))
                {
-                  s = s.Remove(i - 1, 2);
-                  result = true;
+                  if (s[s.IndexOf(c) + 1].Equals('}'))
+                  {
+                     s = s.Remove(s.IndexOf(c), 2);
+                     result = true;
+                  }
                }
             }
          }
+
+         //for (int i = s.Length - 1; i > 0; i--)
+         //{
+         //   if (s[i].ToString() == ")")
+         //   {
+         //      if (s[i-1].ToString() == "(")
+         //      {
+         //         s = s.Remove(i - 1, 2);
+         //         i--;
+         //         result = true;
+         //      }
+         //   }
+         //   else if (s[i].ToString() == "}")
+         //   {
+         //      if (s[i-1].ToString() == "{")
+         //      {
+         //         s = s.Remove(i - 1, 2);
+         //         i--;
+         //         result = true;
+         //      }
+         //   }
+         //   else if (s[i].ToString() == "]")
+         //   {
+         //      if (s[i-1].ToString() == "[")
+         //      {
+         //         s = s.Remove(i - 1, 2);
+         //         i--;
+         //         result = true;
+         //      }
+         //   }
+         //}
 
          return result;
       }
 
       static void Main(string[] args)
       {
-         string s = "()[]{}";
+         string s = "{()[]}";
 
          Console.WriteLine(IsValid(s));
       }
