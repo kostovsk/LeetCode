@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kids With the Greatest Numb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maximum Number of Coins You Can Get", "Maximum Number of Coins You Can Get\Maximum Number of Coins You Can Get.csproj", "{4B98BAEC-9E50-4A20-A774-E81846978DC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse Integer", "Reverse Integer\Reverse Integer.csproj", "{C42B253F-822A-47A2-A78E-5A8A46817233}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse Integer", "Reverse Integer\Reverse Integer.csproj", "{C42B253F-822A-47A2-A78E-5A8A46817233}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Two Sum", "Two Sum\Two Sum.csproj", "{8335EB04-4751-4B95-8632-305D8163ACC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Two Sum", "Two Sum\Two Sum.csproj", "{8335EB04-4751-4B95-8632-305D8163ACC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valid Parentheses", "Valid Parentheses\Valid Parentheses.csproj", "{61631881-77D3-4ED8-880D-8B72CA7355C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{8335EB04-4751-4B95-8632-305D8163ACC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8335EB04-4751-4B95-8632-305D8163ACC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8335EB04-4751-4B95-8632-305D8163ACC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61631881-77D3-4ED8-880D-8B72CA7355C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61631881-77D3-4ED8-880D-8B72CA7355C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61631881-77D3-4ED8-880D-8B72CA7355C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61631881-77D3-4ED8-880D-8B72CA7355C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
