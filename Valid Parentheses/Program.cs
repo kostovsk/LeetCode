@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Valid_Parentheses
 {
@@ -6,76 +7,47 @@ namespace Valid_Parentheses
    {
       public static bool IsValid(string s)
       {
-         bool result = false;
+         Stack<char> stack = new Stack<char>();
 
-         while(s.Length > 0)
+         for (int i = 0; i < s.Length; i++)
          {
-            foreach (char c in s)
+            if (s[i].Equals('('))
             {
-               if (c.Equals('('))
+               stack.Push(')');
+            }
+            else if (s[i].Equals('{'))
+            {
+               stack.Push('}');
+            }
+            else if (s[i].Equals('['))
+            {
+               stack.Push(']');
+            }
+
+            if (s[i].Equals(')') || s[i].Equals('}') || s[i].Equals(']'))
+            {
+               if (stack.Count > 0 && s[i] == stack.Peek())
                {
-                  if (s[s.IndexOf(c) + 1].Equals(')'))
-                  {
-                     s = s.Remove(s.IndexOf(c), 2);
-                     result = true;
-                  }
+                  stack.Pop();
                }
-               else if (c.Equals('['))
+               else
                {
-                  if (s[s.IndexOf(c) + 1].Equals(']'))
-                  {
-                     s = s.Remove(s.IndexOf(c), 2);
-                     result = true;
-                  }
-               }
-               else if (c.Equals('{'))
-               {
-                  if (s[s.IndexOf(c) + 1].Equals('}'))
-                  {
-                     s = s.Remove(s.IndexOf(c), 2);
-                     result = true;
-                  }
+                  return false;
                }
             }
          }
 
-         //for (int i = s.Length - 1; i > 0; i--)
-         //{
-         //   if (s[i].ToString() == ")")
-         //   {
-         //      if (s[i-1].ToString() == "(")
-         //      {
-         //         s = s.Remove(i - 1, 2);
-         //         i--;
-         //         result = true;
-         //      }
-         //   }
-         //   else if (s[i].ToString() == "}")
-         //   {
-         //      if (s[i-1].ToString() == "{")
-         //      {
-         //         s = s.Remove(i - 1, 2);
-         //         i--;
-         //         result = true;
-         //      }
-         //   }
-         //   else if (s[i].ToString() == "]")
-         //   {
-         //      if (s[i-1].ToString() == "[")
-         //      {
-         //         s = s.Remove(i - 1, 2);
-         //         i--;
-         //         result = true;
-         //      }
-         //   }
-         //}
+         if (stack.Count > 0)
+         {
+            return false;
+         }
 
-         return result;
+         return true;
       }
 
       static void Main(string[] args)
       {
-         string s = "{()[]}";
+         string s = "[(){}]";
 
          Console.WriteLine(IsValid(s));
       }
