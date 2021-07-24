@@ -4,27 +4,26 @@ namespace Climbing_Stairs
 {
    class Program
    {
-      public static int fib(int f)
-      {
-         if (f <= 1)
-            return f;
-         else
-            return fib(f - 1) + fib(f - 2);
-      }
 
       public static int ClimbStairs(int n)
       {
-         int result = 0;
+         if (n <= 2)
+            return n;
 
-         if (n >= 1 && n <= 45)
-            result = fib(n + 1);
+         int[] result = new int[n];
 
-         return result;
+         result[0] = 1;
+         result[1] = 2;
+
+         for (int i = 2; i < n; i++)
+            result[i] = result[i - 1] + result[i - 2];
+
+         return result[n-1];
       }
 
       static void Main(string[] args)
       {
-         int num = 5;
+         int num = 44;
          Console.WriteLine(ClimbStairs(num));
       }
    }
