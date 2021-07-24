@@ -21,13 +21,13 @@ namespace Binary_Tree_Inorder_Traversal
    {
       List<int> list = new List<int>();
 
-      public static IList<int> InorderTraversal(TreeNode root)
+      public IList<int> InorderTraversal(TreeNode root)
       {
          helper(root);
          return list;
       }
 
-      static void helper(TreeNode root)
+      void helper(TreeNode root)
       {
          if (root == null)
          {
@@ -41,9 +41,16 @@ namespace Binary_Tree_Inorder_Traversal
 
       static void Main(string[] args)
       {
-         var root = new TreeNode() { };
+         var root = new TreeNode() { val = 1, left = null, right = new TreeNode() { val = 2, left = new TreeNode() { val = 3, left = null, right = null }, right = null } };
 
-         InorderTraversal(root);
+         var trav = new Program();
+         trav.InorderTraversal(root);
+
+         foreach (var item in trav.list)
+         {
+            Console.WriteLine(item);
+         }
+
          Console.WriteLine();
       }
    }
