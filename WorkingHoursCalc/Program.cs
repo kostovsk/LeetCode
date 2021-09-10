@@ -6,6 +6,7 @@ namespace WorkingHoursCalc
    {
       public static string CalculateTAT(DateTime? receive, DateTime? reply)
       {
+         // TODO use calendar generated, not hard coded
          DateTime[] bankHolidays = new DateTime[]
          {
                 new DateTime(2021, 1, 01),
@@ -45,15 +46,17 @@ namespace WorkingHoursCalc
             }
          }
 
-
+         // TODO input validation for reply, ensure it is only within business hours and valid manually
+         // receive not more than current time
          for (DateTime date = receive.Value; date.Date <= reply.Value.Date; date = date.AddDays(1))
          {
-            if ((int)date.DayOfWeek >= 1 && (int)date.DayOfWeek <= 5)
+            if (date.DayOfWeek > DayOfWeek.Sunday && date.DayOfWeek < DayOfWeek.Saturday)
             {
                totalHours = totalHours + fullDay;
             }
          }
 
+         // TODO use comparison
          foreach (DateTime bankHoliday in bankHolidays)
          {
             DateTime bh = bankHoliday.Date;
@@ -75,7 +78,7 @@ namespace WorkingHoursCalc
          {
             totalHours = totalHours - fullDay - (end - reply.Value.TimeOfDay);
          }
-
+         // TODO total seconds and convert to hours
          result = ((int)totalHours.TotalHours + ":" + totalHours.Minutes.ToString("D2"));
 
          return result;
